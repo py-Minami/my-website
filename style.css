@@ -1,0 +1,35 @@
+body {
+    font-family: "Helvetica", "Arial", sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 50px;
+}
+h1 {
+    color: #ff4500;
+}
+img {
+    max-width: 300px;
+    border-radius: 10px;
+}
+p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+hr {
+    height: 2px; 
+    background-color: gray; 
+    width: 100%; 
+    margin: 10px auto;
+}
+
+
+.site-info {
+    font-size: 1em;
+    color: #999;
+}
+
+footer{
+    font-size: 1em;
+    color: #999;
+}
