@@ -1,6 +1,7 @@
 /* 全体共通 */
 html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -10,9 +11,25 @@ body {
     margin: 0;
 }
 
+.serif {
+    font-family: "Noto Serif JP", serif;
+}
+
 /* ヘッダー */
 header {
     color: white;
+    animation: fadeDown 1s ease forwards;
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 header .row {
@@ -33,6 +50,7 @@ header .logo {
     text-decoration: none;
 }
 
+/* ナビゲーション */
 header nav ul {
     display: flex;
     list-style: none;
@@ -42,13 +60,27 @@ header nav ul {
 
 header nav ul li {
     margin-left: 60px;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeInNav 0.6s ease forwards;
+}
+
+header nav ul li:nth-child(1) { animation-delay: 0.5s; }
+header nav ul li:nth-child(2) { animation-delay: 0.7s; }
+header nav ul li:nth-child(3) { animation-delay: 0.9s; }
+
+@keyframes fadeInNav {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 header nav ul li a {
     color: white;  
     text-decoration: none;
     font-weight: 600;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 header nav ul li a:hover {
@@ -145,6 +177,8 @@ header nav ul li a:hover {
 }
 
 .section1 .btn {
+    text-decoration: none;
+    color: white;
     font-size: 18px;
     border: solid 1px white;
     border-radius: 100px;
@@ -158,4 +192,49 @@ header nav ul li a:hover {
 .section1 .btn:hover {
     color: purple;
     border: solid 1px purple;
+}
+
+/* レスポンシブ対応：画面幅が768px以下の場合 */
+@media (max-width: 768px) {
+    header .row, .main .container, .section1 .container {
+        width: 98%;
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    header .row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    header nav ul li {
+        margin-left: 0;
+        margin-top: 16px;
+    }
+    .main .container {
+        height: 320px;
+    }
+    .main h1 {
+        font-size: 32px;
+    }
+    .main p {
+        font-size: 18px;
+    }
+    .section1 .row {
+        flex-direction: column;
+    }
+    .section1 .col {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .section1 h2 {
+        font-size: 28px;
+    }
+    .section1 .btn {
+        width: 100%;
+        font-size: 16px;
+        line-height: 48px;
+    }
 }
