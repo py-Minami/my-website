@@ -1,4 +1,4 @@
-// 公開CSVのURL
+// 公開CSVのURL（CSV形式で公開していることが前提）
 const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQSVfPJXr6fkdax4wTRxE6GCIBuacewn4x2zYv08P6iVNQeFqGoTqAOh6a1akUSXZNRck5AyKT-r7S4/pub?output=csv";
 
 async function loadTimetable() {
@@ -10,7 +10,7 @@ async function loadTimetable() {
 
     const text = await response.text();
 
-    CSVを行ごとに分割
+    // CSVを行ごとに分割
     const rows = text.trim().split("\n").map(r => r.split(","));
 
     if (rows.length === 0) {
@@ -18,32 +18,27 @@ async function loadTimetable() {
       return;
     }
 
-    // 1行目を曜日ラベルとする
-    const headers = rows[0];
-    const days = headers.map((day, i) => {
-      // 各曜日の授業リスト
-      const items = [];
-      for (let r = 1; r < rows.length; r++) {
-        if (rows[r][i] && rows[r][i].trim() !== "") items.push(rows[r][i].trim());
+    // HTMLテーブル生成
+    let html = "<table><thead><tr><th>時限</th>";
+    const headers = rows[0]; // 曜日ラベル
+    headers.forEach(day => {
+      html += `<th>${day}</th>`;
+    });
+    html += "</tr></thead><tbody>";
+
+    // 時限ごとの行
+    for (let r = 1; r < rows.length; r++) {
+      html += `<tr><td>${r}限</td>`; // 時限番号
+      for (let c = 0; c < headers.length; c++) {
+        const cell = rows[r][c] ? rows[r][c].trim() : "なし"; // 空なら「なし」
+        html += `<td>${cell}</td>`;
       }
-      if (items.length === 0) items.push("授業なし");
-      return { day, items };
-    });
+      html += "</tr>";
+    }
 
-    // HTML生成（カード形式）
-    let html = "";
-    days.forEach(d => {
-      html += `
-        <div class="card">
-          <h3>${d.day}</h3>
-          <ul>
-            ${d.items.map(item => `<li>${item}</li>`).join("")}
-          </ul>
-        </div>
-      `;
-    });
-
+    html += "</tbody></table>";
     container.innerHTML = html;
+
   } catch (err) {
     console.error(err);
     container.innerHTML = "<p>時間割を読み込めませんでした。</p>";

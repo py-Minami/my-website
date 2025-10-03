@@ -16,30 +16,7 @@ body {
   background: #6f42c1;
   color: white;
   padding: 15px 0;
-}
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.header h1 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-.header nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 15px;
-}
-.header nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-.header nav a:hover {
-  text-decoration: underline;
+  text-align: center;
 }
 
 .section1 {
@@ -57,35 +34,22 @@ body {
   margin-bottom: 30px;
 }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+table {
+  width: 100%;
+  border-collapse: collapse;
   margin-top: 20px;
 }
-.card {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  padding: 20px;
-  text-align: left;
-  transition: transform 0.2s ease;
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
 }
-.card:hover {
-  transform: translateY(-5px);
+th {
+  background-color: #6f42c1;
+  color: #fff;
 }
-.card h3 {
-  margin-top: 0;
-  font-size: 1.2rem;
-  color: #6f42c1;
-}
-.card ul {
-  padding-left: 20px;
-  margin: 10px 0 0 0;
-}
-.card li {
-  margin-bottom: 5px;
-  font-size: 0.95rem;
+td {
+  background-color: #fff;
 }
 
 footer {
