@@ -21,28 +21,24 @@ body {
 
 .section1 {
   padding: 40px 20px;
-  text-align: center;
-}
-.section1 .subtitle {
-  font-size: 0.9rem;
-  color: #6f42c1;
-  letter-spacing: 2px;
-}
-.section1 h2 {
-  font-family: "Noto Serif JP", serif;
-  font-size: 2rem;
-  margin-bottom: 30px;
 }
 
+h2 {
+  font-family: "Noto Serif JP", serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* テーブル */
 table {
   width: 100%;
   border-collapse: collapse;
+  text-align: center;
   margin-top: 20px;
 }
 th, td {
-  border: 1px solid #ccc;
+  border: 1px solid #6f42c1;
   padding: 10px;
-  text-align: center;
 }
 th {
   background-color: #6f42c1;
@@ -50,13 +46,4 @@ th {
 }
 td {
   background-color: #fff;
-}
-
-footer {
-  background: #eee;
-  text-align: center;
-  padding: 15px;
-  margin-top: 40px;
-  font-size: 0.9rem;
-  color: #555;
 }
