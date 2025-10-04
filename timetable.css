@@ -90,15 +90,28 @@ table {
 }
 
 button.btn {
-  background-color: #6f42c1;
+  background: linear-gradient(135deg, #6f42c1, #8e5ce2);
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-size: 16px;
-  border-radius: 8px;
+  font-weight: bold;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
 }
+
 button.btn:hover {
-  background-color: #5a379e;
+  background: linear-gradient(135deg, #5a379e, #7a4bd0);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 600px) {
+  button.btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 16px;
+  }
 }
