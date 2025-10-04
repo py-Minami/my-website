@@ -78,3 +78,27 @@ td {
   50% { transform: scaleX(0.2); opacity: 0.3; }
   100% { transform: scaleX(1); opacity: 1; }
 }
+
+table {
+  overflow-x: auto;
+  display: block;
+}
+
+.center {
+  text-align: center;
+  margin-top: 30px;
+}
+
+button.btn {
+  background-color: #6f42c1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+button.btn:hover {
+  background-color: #5a379e;
+}
