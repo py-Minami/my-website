@@ -87,6 +87,7 @@ table {
   margin-bottom: 120px; /* ← ここを追加！ */
   overflow-x: auto;
   display: block;
+  margin: 0 auto
 }
 
 
