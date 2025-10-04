@@ -83,18 +83,15 @@ table {
   width: 100%;
   border-collapse: collapse;
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 120px; /* ← ここを追加！ */
+  margin: 20px auto 120px auto; /* ← これで中央揃え＋上下の余白をまとめて指定 */
   overflow-x: auto;
-  display: block;
-  margin: 0 auto
 }
-
 
 .center {
   text-align: center;
   margin-top: 30px;
 }
+
 
 button.btn {
   background: linear-gradient(135deg, #6f42c1, #8e5ce2);
@@ -121,4 +118,8 @@ button.btn:hover {
     font-size: 14px;
     padding: 10px 16px;
   }
+}
+
+.table-wrapper {
+  overflow-x: auto;
 }

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Noto+Serif+JP&display=swap" rel="stylesheet">
   <title>時間割</title>
   <link rel="stylesheet" href="timetable.css">
   <script src="timetable.js" defer></script>
@@ -20,12 +21,14 @@
       <div class="container">
         <h2 class="serif">今日と明日の時間割</h2>
         <p>以下に示す内容が必ずしも正しいものではないことに留意してご利用ください。</p>
-        <div id="timetable">
-          <div id="container">
-            <span></span>
-            <span></span>
-            <span></span>
-            <p>LOADING</p>
+        <div class="table-wrapper">
+          <div id="timetable">
+            <div id="container">
+              <span></span>
+              <span></span>
+              <span></span>
+              <p>LOADING</p>
+            </div>
           </div>
         </div>
         <button onclick="location.href='index.html#top'" class="btn">ホームに戻る</button>
