@@ -62,7 +62,7 @@ td {
 #container span {
   display: block;
   background: #6f42c1;
-  width: 20px;
+  width: 100px;
   height: 5px;
   margin: 0 5px; /* 横に並べる */
   animation: load 1s infinite alternate;
