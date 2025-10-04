@@ -80,9 +80,15 @@ td {
 }
 
 table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 120px; /* ← ここを追加！ */
   overflow-x: auto;
   display: block;
 }
+
 
 .center {
   text-align: center;
