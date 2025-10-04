@@ -60,7 +60,7 @@ td {
 }
 
 #container span {
-  display: inline-block; /* block → inline-block に変更 */
+  display: block;
   background: #6f42c1;
   width: 20px;
   height: 5px;
